@@ -18,19 +18,19 @@ NOTE: THE LIST OF STUDENTS ACTUALLY NEED TO BE IN FILE STUDENTS.TXT
 
 To generate the output file:
 
-$ python shuffle.py <question file> <tex file>
+    $ python shuffle.py < question file > < tex file >
 
 The format of question file is the following:
 
-Q: Question1?
-Answer1
-Answer2
-Answer3
+Q: Question1?  
+Answer1  
+Answer2  
+Answer3  
 
-Q: Question2?
-Answer1
-Answer2
-Answer3
+Q: Question2?  
+Answer1  
+Answer2  
+Answer3  
 
 There are not limits to question or answer number.
 

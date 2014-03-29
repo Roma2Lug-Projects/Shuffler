@@ -26,7 +26,7 @@ class QuestionAnswer(object):
     LatexTemplate = """
 \\noindent
 {qid}) {question}
-\\begin{{enumerate}} \setlength{{\itemsep}}{{0pt}}
+\\begin{{enumerate}}[a.] \setlength{{\itemsep}}{{0pt}}
 {items}
 \end{{enumerate}}
 """
@@ -35,8 +35,19 @@ class QuestionAnswer(object):
 
         self.question = question
         self.answer_set = answer_set
+        self.answer_index = -1
 
         random.shuffle(self.answer_set)
+
+        for i, answer in enumerate(self.answer_set):
+            if answer.startswith('*'):
+                self.answer_index = i
+                self.answer_set[i] = answer.lstrip('*')
+                break
+
+
+        if self.answer_index == -1:
+            raise Exception('Answer set doesn\'t specify the right answer!')
 
 
     def __str__(self):
@@ -63,6 +74,7 @@ class QuestionAnswer(object):
 
         return QuestionAnswer.LatexTemplate.format(**params)
 
-
+    def get_answer_index(self):
+        return chr(97 + self.answer_index)
 
 

@@ -11,8 +11,8 @@ Linux, Python 2.7 and optionally a bottle of Jack Daniels.
 HowTo
 -----
 
-The program will generate a Latex document starting from a
-text file with questions and a list of students.
+The program will generate a Latex document and an answer file starting
+from a text file with questions and a list of students.
 
 NOTE: THE LIST OF STUDENTS ACTUALLY NEED TO BE IN FILE STUDENTS.TXT
 
@@ -24,13 +24,15 @@ The format of question file is the following:
 
 Q: Question1?  
 Answer1  
-Answer2  
+\*Answer2  
 Answer3  
 
 Q: Question2?  
 Answer1  
 Answer2  
-Answer3  
+\*Answer3  
+
+The '\*' symbol will indicate the right answer.
 
 There are not limits to question or answer number.
 

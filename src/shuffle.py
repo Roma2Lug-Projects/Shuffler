@@ -82,6 +82,8 @@ def main(argc, args):
 
     qa_set = parse_input_file(in_filename)
 
+    solutions = open('solutions.txt', 'w')
+
     sample_len = min(10, len(qa_set))
 
     document = LatexQuestionDocument()
@@ -89,11 +91,20 @@ def main(argc, args):
     for index, student in enumerate(open('students.txt')):
         page = LatexQuestionPage("2 Aprile 2014", student.strip('\n'), index+1)
 
-        qa = random.sample(qa_set, sample_len)
+        qa_sel = random.sample(qa_set, sample_len)
 
-        page.add_questions(qa)
+        solutions.write('Questionario {0}: '.format(index))
+
+        for i, qa in enumerate(qa_sel):
+            solutions.write( '<{0}, {1}> '.format(i+1, qa.get_answer_index()) )
+
+        solutions.write('\n')
+
+        page.add_questions(qa_sel)
 
         document.add_page(page)
+
+    solutions.close()
 
     write_output_file(out_filename, document)
 

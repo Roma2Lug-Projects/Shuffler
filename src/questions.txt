@@ -2,36 +2,36 @@ Q: La vita è bella?
 
 Che amarezza
 No
-Fanculo tutti
+*Se lo fosse non ci sarebbe la domanda
 Na schifezza
 
 Q: Che rappresenta il modulo xyz?
 
-una cazzata
-bella patata
-bella fuffa
-una bella trovata
+Il modulo ABC
+Il modulo DEF
+Fuffa
+*Una bella trovata
 
 Q: Questa è volutamente una domanda molto lunga per chiedervi un bel nulla?
 
 Si
-Avoja
+*Avoja
 No
 
 Q: Che ne pensate della fissione nucleare?
 
 Non conosco il campionato in cui gioca
 L'ho inventata io
-Niente
+*Niente
 
 Q: Siam tre piccoli porcellin... continua la frase:
 
 Non mi va
-Non la so
+*Non la so
 Trallallero trallallà
 
 Q: Possono esistere cisterne piene di RedBull?
 
 Solo nei tuoi sogni
-Magari!
+*Magari!
 Le guido per hobby

@@ -33,10 +33,7 @@ class LatexQuestionPage(object):
 
         self.text += LatexQuestionPage.LatexHeaderTemplate.format(date = _date, qnumber = _qnumber, stud_name = _stud)
 
-    def add_questions(self, qa_set, randomize = True):
-
-        if randomize:
-            random.shuffle(qa_set)
+    def add_questions(self, qa_set):
 
         self.text += "\\begin{minipage}[t]{0.48\\textwidth}\n"
 
@@ -67,6 +64,7 @@ class LatexQuestionDocument(object):
 \usepackage[T1]{fontenc}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
+\usepackage{enumerate}
 
 \\begin{document}\pagestyle{empty}
 """

@@ -93,7 +93,7 @@ def main(argc, args):
 
         qa_sel = random.sample(qa_set, sample_len)
 
-        solutions.write('Questionario {0}: '.format(index))
+        solutions.write('Questionario {0}: '.format(index+1))
 
         for i, qa in enumerate(qa_sel):
             solutions.write( '<{0}, {1}> '.format(i+1, qa.get_answer_index()) )

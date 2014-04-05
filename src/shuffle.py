@@ -80,16 +80,18 @@ def main(argc, args):
 
     in_filename, out_filename = check_arguments(argc, args)
 
-    qa_set = parse_input_file(in_filename)
 
     solutions = open('solutions.txt', 'w')
 
-    sample_len = min(10, len(qa_set))
 
     document = LatexQuestionDocument()
 
     for index, student in enumerate(open('students.txt')):
         page = LatexQuestionPage("2 Aprile 2014", student.strip('\n'), index+1)
+
+        qa_set = parse_input_file(in_filename)
+
+        sample_len = min(10, len(qa_set))
 
         qa_sel = random.sample(qa_set, sample_len)
 

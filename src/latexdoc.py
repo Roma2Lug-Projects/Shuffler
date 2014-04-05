@@ -25,7 +25,7 @@ class LatexQuestionPage(object):
     LatexHeaderTemplate = """
 \\begin{{center}}\\footnotesize{{Seminario {date} - Roma2LUG - Universita' di Roma Tor Vergata}}\\normalsize
 
-\\textbf{{Questionario numero {qnumber} }} \hfill \\textbf{{ {stud_name} }}\\\\\\bigskip\end{{center}}"""
+\\bigskip\\textbf{{Questionario numero {qnumber} }} \hfill \\textbf{{ {stud_name} }}\\\\\\bigskip\end{{center}}"""
 
 
     def __init__(self, _date, _stud = "", _qnumber = 1):
@@ -35,14 +35,15 @@ class LatexQuestionPage(object):
 
     def add_questions(self, qa_set):
 
-        self.text += "\\begin{minipage}[t]{0.48\\textwidth}\n"
+        self.text += "\\begin{minipage}[t]{0.45\\textwidth}\n"
 
         for index, qa in enumerate(qa_set):
 
             if index > 0 and index % 5 == 0:
                 self.text += "\end{minipage}\n"
-                self.text += "\\begin{minipage}[t]{0.48\\textwidth}\n"
-
+                self.text += "\\begin{minipage}[t]{0.05\\textwidth}\hfill\n"
+                self.text += "\end{minipage}\n"
+                self.text += "\\begin{minipage}[t]{0.45\\textwidth}\n"
             self.text += qa.to_latex(index+1)
 
         self.text += "\end{minipage}\n"
